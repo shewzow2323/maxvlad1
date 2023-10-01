@@ -65,4 +65,24 @@ def menu():
 def example():
     name = "Кривошеев М.С. и Гавра В.А."
     lab_num = "Лабораторная работа №2"
-    return render_template('example.html', name=name, lab_num=lab_num)
+    course = '3 курс'
+    group = 'ФБИ-11'
+    books = [ {'name': 'Убийство в Восточном экспрессе', 'year': 1934},
+        {'name': 'Тайна трех актрис', 'year': 1956},
+        {'name': 'Маленькие убийства Агаты Кристи', 'year': 1954},
+        {'name': 'Смерть на Ниле', 'year': 1937},
+        {'name': '10 негритят', 'year': 1939},        
+        {'name': 'Потерянное сокровище', 'year': 1925},
+        {'name': 'Потерянное в Месопотамии', 'year': 1936},
+        {'name': 'Загадка Эндхауза', 'year': 1946},
+        {'name': 'Сеанс', 'year': 1920},
+        {'name': 'Убийство Роджера Экройда', 'year': 1926},]
+    fruits = [
+        {'name': 'апельсины', 'price': 100},
+        {'name': 'яблоки', 'price': 200},
+        {'name': 'манго', 'price': 300},
+        {'name': 'мандарины', 'price': 400},
+        {'name': 'лимон', 'price': 500},
+
+    ]
+    return render_template('example.html', lab_num=lab_num, course=course, group=group, name=name, fruits=fruits, books=books)
