@@ -12,11 +12,25 @@
     </header>
 
     <main>
+        <h1>Вычисления</h1>
         {{lab_num}}<br>
         5 + 2 = {{5+2}}<br>
         11 * 28 = {{11*28}}<br>
         8452 / 793 = {{8452/793}}<br>
         45**8 = {{45**8}}<br>
+        <h1>Фрукты</h1>
+        <ul>
+            {% for f in fruits %}
+            <li>{{ f.name }}, {{ f.price }} &#8381; </li>
+            {% endfor %}
+        </ul>
+
+        <h1>Книги</h1>
+        <ul>
+            {% for b in books %}
+            <li>{{ b.name }} : {{ b.year }}, {{b.pages}}</li>
+            {% endfor %}
+        </ul>
 
     </main>
 
