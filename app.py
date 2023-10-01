@@ -53,6 +53,7 @@ def menu():
 
     <main> 
         <h1><a href='/lab1'>Лаба 1</h1>
+        <h1><a href='/lab2/'>Лаба 2</h1>
     </main>
 
     <footer>
@@ -67,16 +68,16 @@ def example():
     lab_num = "Лабораторная работа №2"
     course = '3 курс'
     group = 'ФБИ-11'
-    books = [ {'name': 'Убийство в Восточном экспрессе', 'year': 1934},
-        {'name': 'Тайна трех актрис', 'year': 1956},
-        {'name': 'Маленькие убийства Агаты Кристи', 'year': 1954},
-        {'name': 'Смерть на Ниле', 'year': 1937},
-        {'name': '10 негритят', 'year': 1939},        
-        {'name': 'Потерянное сокровище', 'year': 1925},
-        {'name': 'Потерянное в Месопотамии', 'year': 1936},
-        {'name': 'Загадка Эндхауза', 'year': 1946},
-        {'name': 'Сеанс', 'year': 1920},
-        {'name': 'Убийство Роджера Экройда', 'year': 1926},]
+    books = [ {'name': 'Убийство в Восточном экспрессе', 'year': 1934, 'pages':100},
+        {'name': 'Тайна трех актрис', 'year': 1956, 'pages':100},
+        {'name': 'Маленькие убийства Агаты Кристи', 'year': 1954,'pages':100},
+        {'name': 'Смерть на Ниле', 'year': 1937,'pages':100},
+        {'name': '10 негритят', 'year': 1939,'pages':100},        
+        {'name': 'Потерянное сокровище', 'year': 1925,'pages':100},
+        {'name': 'Потерянное в Месопотамии', 'year': 1936,'pages':100},
+        {'name': 'Загадка Эндхауза', 'year': 1946,'pages':100},
+        {'name': 'Сеанс', 'year': 1920,'pages':100},
+        {'name': 'Убийство Роджера Экройда', 'year': 1926, 'pages':100},]
     fruits = [
         {'name': 'апельсины', 'price': 100},
         {'name': 'яблоки', 'price': 200},
@@ -86,3 +87,9 @@ def example():
 
     ]
     return render_template('example.html', lab_num=lab_num, course=course, group=group, name=name, fruits=fruits, books=books)
+@app.route('/lab2/')
+def lab2():
+    return render_template ("lab2.html")
+@app.route('/auto')
+def auto():
+    return render_template ('auto.html')
