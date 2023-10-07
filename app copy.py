@@ -1,10 +1,10 @@
-from flask import Flask, redirect, url_for, render_template
-app = Flask(__name__)
-@app.route('/')
-@app.route('/index')
+from flask import Blueprint, redirect, url_for, render_template
+lab1 = Blueprint('lab1', __name__)
+@lab1.route('/')
+@lab1.route('/index')
 def start():
     return redirect ('/menu', code=302)
-@app.route('/lab1')
+@lab1.route('/lab1')
 def lab1():
     return '''
 <!DOCTYPE html>
@@ -36,7 +36,7 @@ Werkzeug, а также шаблонизатор Jinja2. Относится к �
 </body>
 </html>
 '''
-@app.route('/menu')
+@lab1.route('/menu')
 def menu():
     return '''
 <!DOCTYPE html>
@@ -62,7 +62,7 @@ def menu():
 </body>
 </html>
 '''
-@app.route('/lab2/example')
+@lab1.route('/lab2/example')
 def example():
     name = "Кривошеев М.С. и Гавра В.А."
     lab_num = "Лабораторная работа №2"
@@ -96,9 +96,9 @@ def example():
 
 
 
-@app.route('/lab2/')
+@lab1.route('/lab2/')
 def lab2():
     return render_template ("lab2.html")
-@app.route('/auto')
+@lab1.route('/auto')
 def auto():
     return render_template ('auto.html')
